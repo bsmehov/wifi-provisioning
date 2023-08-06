@@ -73,6 +73,31 @@ def submit():
     
     return 'WiFi configuration updated. The device will now restart.'
     
+    
+@app.route('/enable_ap', methods=['POST'])
+def enable_ap():
+    ap_config = [
+        'interface wlan0\n',
+        '    static ip_address=192.168.4.1/24\n',
+        '    nohook wpa_supplicant\n'
+    ]
+
+    with open('/etc/dhcpcd.conf', 'a') as f:
+        f.writelines(ap_config)
+
+    run_command(['sudo', 'service', 'dhcpcd', 'restart'])
+
+    run_command(['sudo', 'systemctl', 'unmask', 'hostapd'])
+    run_command(['sudo', 'systemctl', 'enable', 'hostapd'])
+    run_command(['sudo', 'systemctl', 'start', 'hostapd'])
+
+    run_command(['sudo', 'systemctl', 'unmask', 'dnsmasq'])
+    run_command(['sudo', 'systemctl', 'enable', 'dnsmasq'])
+    run_command(['sudo', 'systemctl', 'start', 'dnsmasq'])
+
+    Timer(20, reboot).start()
+
+    return 'AP configuration updated. The device will now restart.'
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
