@@ -14,7 +14,7 @@ If you didn't use the given OS image, then you need Raspberry pi with Wifi modul
 
 1. You need to install: 
  - sudo apt-get install dnsmasq hostapd
-2. Then stop those two services to be able to configure them.
+2. Then stop those two services to be able to configure them:
  - sudo systemctl stop dnsmasq
  - sudo systemctl stop hostapd
 3. Configure a static ip adress of wlan0, by editing dhcpcd.conf file:
@@ -43,5 +43,5 @@ If you didn't use the given OS image, then you need Raspberry pi with Wifi modul
 10. Enable routing of the internet traffic:
   - sudo nano /etc/sysctl.conf
 11. Reboot the system
-12. After rebooting, navigate to the working directory, where you have the script saved and run it with python3 command. 
+12. After rebooting, navigate to the working directory where you have the script saved and run it with python3 command. 
 
