@@ -1,7 +1,5 @@
 # wifi-provisioning
 
-One Paragraph of project description goes here. Describe what your project does, its features, and its purpose.
-
 Main goal of the project is Wifi provisioning on Raspberry pi model 4. User has 2 options when accessing Raspberry pi server, To set Wifi credentials (SSID and password), after submiting the changes Raspberry pi reboots and connects to the specified Wifi. If Raspberry pi is already connected to the wifi, user can press AP mode button and RPI returns into access point mode.
 
 ## Getting Started
