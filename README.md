@@ -4,7 +4,7 @@ Main goal of the project is Wifi provisioning on Raspberry pi model 4. User has 
 
 ## Getting Started
 
-If you choose to use RPI image file to load OS all prerequisites are already installed and running. Python script is also running as a service, so there is no need to run the script, for it to work you just need to download image file to RPI and boot it.
+If you choose to use RPI image file to load OS all prerequisites are already installed and running. Python script is also running as a service, so there is no need to run the script, for it to work you just need to download image file to RPI and boot it. To access Wifi provisioning connect to the RPI AP via available Wifi Options (name blaz), to then connect to the settings in selected browser search for http://raspberrypi.local/. If you already put in Wifi credentials, you have to be connected to the same Wifi as RPI to be able to access settings with address: http://raspberrypi.local/. 
 
 ### Prerequisites
 
