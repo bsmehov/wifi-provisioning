@@ -8,7 +8,7 @@ If you choose to use RPI image file to load OS all prerequisites are already ins
 
 ### Prerequisites
 
-For the code to work you need raspberry pi with Wifi module and RPI OS 32 lite. Files given in the source code are just for application and there are still soma packages and files you need to modifiy if you want it to work. 
+If you didnt use given OS image, then for the code to work you need raspberry pi with Wifi module and RPI OS 32 lite. Files given in the source code are just for application and there are still soma packages and files you need to modifiy if you want it to work. 
 
 1. You need to install: 
  - sudo apt-get install dnsmasq hostapd
