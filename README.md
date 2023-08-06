@@ -21,25 +21,25 @@ For the code to work you need raspberry pi with Wifi module and RPI OS 32 lite. 
  - sudo nano /etc/dhcpcd.conf
 4. Add the followwing lines to the end of the dhcpcd.conf file:
  - interface wlan0
-    static ip_address=192.168.4.1/24 (or select ip address you want when its in AP mode)
-    nohook wpa_supplicant
+ - static ip_address=192.168.4.1/24 (or select ip address you want when its in AP mode)
+ - nohook wpa_supplicant
 5. restart dhcpcd service:
   - sudo service dhcpcd restart
 6. Edit dnsmasq.conf file and add following lines:
   - interface=wlan0
-    dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+  - dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
 7. Configure hostapd.conf file, add the following lines:
   - interface=wlan0
-    driver=nl80211
-    ssid=YourNetworkSSID          (select SSID for AP mode)
-    wpa_passphrase=YourPassword   (select psk for AP mode)
+  - driver=nl80211
+  - ssid=YourNetworkSSID          (select SSID for AP mode)
+  - wpa_passphrase=YourPassword   (select psk for AP mode)
 8. find line #DAEMON_CONF and replace it with DAEMON_CONF="/etc/hostapd/hostapd.conf"
   - sudo nano /etc/default/hostapd
 9. Configure the system to start the services at boot:
   - sudo systemctl unmask hostapd
-    sudo systemctl enable hostapd
-    sudo systemctl start hostapd
-    sudo systemctl start dnsmasq
+  - sudo systemctl enable hostapd
+  - sudo systemctl start hostapd
+  - sudo systemctl start dnsmasq
 10. Enable routing of the internet traffic:
   - sudo nano /etc/sysctl.conf
 11. Reboot the system
